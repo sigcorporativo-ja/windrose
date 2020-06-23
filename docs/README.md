@@ -2,7 +2,7 @@
 
 Plugin que incorpora una rosa de vientos que se desplaza y gira con el mapa.
 
-![Imagen1](./img/windRose_1.png)
+![Imagen1](../img/windRose_1.png)
 
 
 ## Dependencias
