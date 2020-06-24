@@ -1,0 +1,43 @@
+{
+  "url": {
+    "name": "windrose",
+    "separator": "*"
+  },
+  "constructor": "M.plugin.Windrose",
+  "parameters": [{
+    "type": "object",
+    "properties": [{
+      "type": "enum",
+      "name": "position",
+      "possibleValues": [
+        "TR",
+        "TL",
+        "TC",
+        "BL",
+        "BR",
+        "BC",
+        "RC",
+        "LC"
+      ],
+      "position": 0
+    }]
+  }],
+  "files": {
+    "ol": {
+      "scripts": ["windrose.ol.min.js"],
+      "styles": ["windrose.ol.min.css"]
+    }
+  },
+  "metadata": {
+    "name": "Windrose",
+    "description": "Rosa de los vientos",
+    "text": "Te permite mostrar una rosa de los vientos en el mapa",
+    "version": "1.0.0",
+    "date": "Junio, 2020",
+    "author": "",
+    "org": "Consejería de Hacienda, Industria y Energía. Junta de Andalucía.",
+    "tags": "mapea,plugin",
+    "icon": "./facade/assets/icons/icons.svg",
+    "centralized": true
+  }
+}
