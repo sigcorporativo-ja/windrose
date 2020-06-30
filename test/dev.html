@@ -7,7 +7,8 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="mapea" content="yes">
     <title>Windrose TEST</title>
-    <link href="http://sigc.desarrollo.guadaltel.es/mapea-hcsigc/assets/css/mapea-5.1.0.ol.min.css" rel="stylesheet" />
+    <link href="http://sigc-dev.desarrollo.guadaltel.es/mapea5/assets/css/mapea-5.2.0.ol.min.css" rel="stylesheet" />
+    <link href="../dist/windrose.ol.min.css" rel="stylesheet" />
     <style rel="stylesheet">
         html,
         body {
@@ -22,10 +23,20 @@
 
 <body>
     <div id="mapjs" class="container"></div>
-    <script type="text/javascript" src="http://sigc.desarrollo.guadaltel.es/mapea-hcsigc/js/mapea-5.1.0.ol.min.js"></script>
-    <script type="text/javascript" src="http://sigc.desarrollo.guadaltel.es/mapea-hcsigc/js/configuration-5.1.0.js"></script>
-    <script type="text/javascript" src="/main.js"></script>
+    <script type="text/javascript" src="http://sigc-dev.desarrollo.guadaltel.es/mapea5/js/mapea-5.2.0.ol.min.js"></script>
+    <script type="text/javascript" src="http://sigc-dev.desarrollo.guadaltel.es/mapea5/js/configuration-5.2.0.js"></script>
+    <script type="text/javascript" src="../dist/windrose.ol.min.js"></script>
+    <script>
+        const map = M.map({
+            container: 'mapjs'
+        });
 
+        const mp = new M.plugin.Windrose({
+            position: 'TC',
+        });
+
+        map.addPlugin(mp);
+    </script>
 </body>
 
 </html>

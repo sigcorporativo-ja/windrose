@@ -1,8 +1,7 @@
 import Windrose from 'facade/windrose';
 
 const map = M.map({
-  container: 'mapjs',
-  controls: 'layerswitcher',
+  container: 'mapjs'
 });
 
 const mp = new Windrose({ position: 'TC' });
