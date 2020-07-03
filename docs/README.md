@@ -40,9 +40,6 @@ Plugin que incorpora una rosa de vientos que se desplaza y gira con el mapa.
 olMap.on('postcompose', e => this.drawWindRose(e));
 ```
 
-## Otros métodos
-
-
 ## Ejemplos de uso
 
 ### Ejemplo 1
