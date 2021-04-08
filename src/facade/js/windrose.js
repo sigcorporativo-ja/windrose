@@ -53,6 +53,14 @@ export default class Windrose extends M.Plugin {
      * @type {Object}
      */
     this.metadata_ = api.metadata;
+
+    /**
+     * Size of windrose
+     *
+     * @private
+     * @type {number}
+     */
+    this.size_ = options.size;
   }
 
   /**
@@ -64,8 +72,7 @@ export default class Windrose extends M.Plugin {
    * @api stable
    */
   addTo(map) {
-    map.getMapImpl().removeEventListener('postcompose');
-    this.control_ = new WindroseControl(this.position);
+    this.control_ = new WindroseControl(this.position, this.size_);
     this.controls_.push(this.control_);
     this.map_ = map;
     map.addControls(this.controls_);
@@ -79,15 +86,10 @@ export default class Windrose extends M.Plugin {
    * @api stable
    */
   destroy() {
-    this.map_.getMapImpl().removeEventListener('postcompose');
+    this.control_.destroy();
     this.map_.removeControls([this.control_]);
 
-    // Force the map to remove the imagen windrose
-    setTimeout(() => {
-      const resolution = this.map_.getMapImpl().getView().getResolution();
-      this.map_.getMapImpl().getView().setResolution(resolution - 0.000001);
-      [this.controls_, this.map_] = [null, null];
-    }, 500);
+    [this.controls_, this.map_] = [null, null];
   }
 
   /**
